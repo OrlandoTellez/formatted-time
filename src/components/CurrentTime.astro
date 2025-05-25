@@ -3,9 +3,11 @@
 ---
 
 <div>
-    <h2>Current Time</h2>
-    <p id="clock"></p>
-    <p>Current Date: {new Date().toLocaleDateString()}</p>
+    <h4>Hora actual:</h4>
+    <article>
+        <p>{new Date().toLocaleDateString()},</p>
+        <p id="clock"></p>
+    </article>
 </div>
 
 <script>
@@ -29,11 +31,28 @@
 
 <style>
     div {
+        width: 100%;
         background-color: var(--color-secundario);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    article {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px 0px; 
+        gap: 10px;
+    }
+
+    p{
+        color: #2563eb;
+        font-size: 1.6rem;
+        font-weight: 700;
     }
 </style>
