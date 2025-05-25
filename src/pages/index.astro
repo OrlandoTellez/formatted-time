@@ -1,8 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Hero from "../sections/Hero.astro"
+import Main from "../sections/Main.astro"
 ---
 
 <Layout title="Formatted time - Orlando Téllez">
-  <Hero />
+  <main>
+    <Hero />
+    <Main />
+  </main>
 </Layout>
+
+<style>
+  main{
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    place-items: center;
+    gap: 20px;
+  }
+</style>

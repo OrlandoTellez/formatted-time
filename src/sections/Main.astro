@@ -1,0 +1,30 @@
+---
+import Section from "../components/Section.astro";
+import CardTime from "../components/CardTime.astro";
+import { timeFormats } from "../const/timeFormats";
+---
+
+<main>
+    <Section>
+        <div>
+            {
+                timeFormats.map((format) => (
+                    <CardTime {...format}/>
+                ))
+            }
+        </div>
+    </Section>
+</main>
+
+<style>
+    div{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 20px;
+    }
+
+    main{
+        width: 100%;
+    }
+</style>
