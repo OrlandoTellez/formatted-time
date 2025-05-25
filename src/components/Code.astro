@@ -1,0 +1,30 @@
+---
+interface Props {
+    txt: string;
+}
+
+const { txt } = Astro.props;
+---
+
+<pre>
+    <code>
+            {txt}
+    </code>
+</pre>
+
+
+<style>
+     pre {
+        border-radius: 5px;
+        overflow-x: auto; 
+        margin: 1.5em 0;
+        background-color: var(--color-codigo);
+    }
+
+    code {
+        font-family: "Courier New", monospace; 
+        border-radius: 3px;
+        color: #ffffff;
+    }
+
+</style>

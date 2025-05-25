@@ -1,0 +1,57 @@
+---
+import Code from './Code.astro'
+import LivePreview from "./LivePreview"
+
+interface Props{
+    fnName: string
+    title: string
+    description: string
+    tag: string
+    code: string
+}
+
+const { fnName, title, description, tag, code } = Astro.props
+---
+
+<article>
+    <div class="description">
+        <div>
+            <h3>{title}</h3>
+            <p>{description}</p>
+        </div>
+        <div>
+            <p>{tag}</p>
+        </div>
+    </div>
+
+    <div>
+        <p>Vista previa:</p>
+        <LivePreview fnName={fnName} client:load />
+
+    </div>
+
+    <div>
+       <Code 
+       txt={code}
+       />
+    </div>
+</article>
+
+<style>
+    article{
+        background-color: var(--color-secundario);
+        padding: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 10px;
+    }
+
+    .description{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0px; 
+        gap: 10px;
+    }
+
+   
+</style>
