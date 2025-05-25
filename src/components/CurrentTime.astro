@@ -1,0 +1,39 @@
+---
+
+---
+
+<div>
+    <h2>Current Time</h2>
+    <p id="clock"></p>
+    <p>Current Date: {new Date().toLocaleDateString()}</p>
+</div>
+
+<script>
+    const clockElement = document.getElementById('clock') 
+    const formatTime = () => {
+    const now = new Date()
+    return now.toLocaleTimeString('es-ES', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    })
+    }
+
+    if (clockElement) {
+        clockElement.textContent = formatTime()
+        setInterval(() => {
+            clockElement.textContent = formatTime()
+        }, 1000)
+    }
+</script>
+
+<style>
+    div {
+        background-color: var(--color-secundario);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+</style>
