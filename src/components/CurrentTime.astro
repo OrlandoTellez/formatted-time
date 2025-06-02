@@ -3,32 +3,26 @@
 ---
 
 <div>
-    <h4>Hora actual:</h4>
-    <article>
-        <p>{new Date().toLocaleDateString()},</p>
-        <p id="clock"></p>
-    </article>
+  <h4>Hora actual:</h4>
+  <article>
+    <p>{new Date().toLocaleDateString()},</p>
+    <p id="clock"></p>
+  </article>
 </div>
 
-<script>
-    const clockElement = document.getElementById('clock') 
-    const formatTime = () => {
-    const now = new Date()
-    return now.toLocaleTimeString('es-ES', {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-    })
-    }
+<script >
+  import { formatTime } from '../lib/timeFunctions.js';
 
+  const updateClock = () => {
+    const clockElement = document.getElementById('clock');
     if (clockElement) {
-        clockElement.textContent = formatTime()
-        setInterval(() => {
-            clockElement.textContent = formatTime()
-        }, 1000)
+      clockElement.textContent = formatTime();
     }
-</script>
+  };
 
+  updateClock(); 
+  setInterval(updateClock, 1000); 
+</script>
 <style>
     div {
         width: 100%;
